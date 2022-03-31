@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/find" method="POST" style="align-content: center">
+        <input name="expression" type="text" value="">
+        <input type="submit">
+        <br>
+        <br>
+        <br>
+        {% for e in result %}
+            <a href="{{ e }}" target="_blank">Сайт содержит '{{ expression }}'</a><br>
+        {% endfor %}
+    </form>
+</body>
+</html>

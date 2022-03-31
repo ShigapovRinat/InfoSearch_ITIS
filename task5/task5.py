@@ -1,5 +1,9 @@
 import math
 
+URL = 'https://www.litmir.me/br/?b=217310&p='
+tf_idf_dict = {}
+tf = {}
+
 
 def prepare():
     with open('../task4/tf-idf.txt', 'r', encoding="utf-8") as doc:
@@ -50,15 +54,12 @@ def resolve_expression(exp):
         normalized_doc = math.sqrt(sqr)
         total = scalar / (normalized_doc * normalized_expression)
         if total > 0:
-            suitable_docs.append(i)
+            suitable_docs.append(URL + str(i))
 
     return suitable_docs
 
 
 if __name__ == '__main__':
-    tf_idf_dict = {}
-    tf = {}
-
     prepare()
     fill_tf()
 
